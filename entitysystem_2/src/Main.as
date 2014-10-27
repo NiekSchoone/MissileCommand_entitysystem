@@ -31,7 +31,7 @@
 			// dit doen we door ze toe te voegen aan de engine
 			_engine.addSystem(new GravitySystem());
 			_engine.addSystem(new MovementSystem());
-			//_engine.addSystem(new CollisionSystem());
+			_engine.addSystem(new CollisionSystem());
 			_engine.addSystem(new RenderSystem());			
 			
 			var _towerFactory : TowerFactory = new TowerFactory();
