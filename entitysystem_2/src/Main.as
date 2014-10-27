@@ -6,6 +6,7 @@
 	import components.PositionComponent;
 	import components.VelocityComponent;
 	import factories.CarFactory;
+	import factories.TowerFactory;
 	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.Event;
@@ -31,6 +32,16 @@
 			_engine.addSystem(new MovementSystem());
 			_engine.addSystem(new CollisionSystem());
 			_engine.addSystem(new RenderSystem());			
+			
+			var _towerFactory : TowerFactory = new TowerFactory();
+			
+			for (var i:int = 0; i < 3; i++) 
+			{
+				var _tower : Entity = _towerFactory.buildTower(TowerFactory.TOWER, 300 * i + 100);
+				addChild(_tower.get(DisplayComponent).view)
+				
+				_engine.addEntity(_tower);
+			}
 			
 			// start het updaten van het spel
 			stage.addEventListener(Event.ENTER_FRAME, updateEngine);

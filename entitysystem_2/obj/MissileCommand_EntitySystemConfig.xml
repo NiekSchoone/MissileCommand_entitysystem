@@ -38,6 +38,7 @@
     <library-path append="true">
       <path-element>C:\Users\niek\Documents\GitHub\MissileCommand_entitysystem\entitysystem_2\lib\library.swc</path-element>
       <path-element>C:\Users\niek\Documents\GitHub\MissileCommand_entitysystem\entitysystem_2\lib\landscape.swc</path-element>
+      <path-element>C:\Users\niek\Documents\GitHub\MissileCommand_entitysystem\entitysystem_2\lib\Assets.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
