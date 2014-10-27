@@ -11,32 +11,28 @@ package factories
 	{
 		
 		public static var MISSILE : String = "missile";
-		public static var ENEMY_BOMB    : String = "enemybomb";
+		public static var BOMB    : String = "bomb";
 		
-		public function buildShell(type : String, locX:int, locY:int):Entity
+		public function buildShell(type : String):Entity
 		{
-			var display : DisplayComponent 	= new DisplayComponent();
+			if (type == MISSILE)
+			{
+				var display : DisplayComponent 	= new DisplayComponent();
+				display.view 					= new missile();
+			}
+			else if (type == BOMB)
+			{
+				var display : DisplayComponent 	= new DisplayComponent();
+				display.view 					= new CarImage();
+			}
+			
+			var position : PositionComponent = new PositionComponent();
+			position.x 						 = Math.random() * 600;
+			position.y						 = 0;
 			
 			var velocity : VelocityComponent = new VelocityComponent();
 			velocity.velocityX 				 = 0;
-			
-			var position : PositionComponent = new PositionComponent();
-			position.x 						 = locX;
-			position.y						 = locY;
-			if (type == MISSILE)
-			{
-				display.view 					= new missile();
-				velocity.velocityY 				 = -1;
-				position.rotation 180;
-				
-			}
-			else if (type == ENEMY_BOMB)
-			{
-				display.view 					= new CarImage();
-				velocity.velocityY 				 = 1;
-			}
-			
-			
+			velocity.velocityY 				 = 1;
 			
 			var shell : Entity = new Entity();
 			

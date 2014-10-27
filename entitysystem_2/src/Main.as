@@ -29,7 +29,7 @@
 			
 			// vervolgens initieren wij de systemen
 			// dit doen we door ze toe te voegen aan de engine
-			//_engine.addSystem(new GravitySystem());
+			_engine.addSystem(new GravitySystem());
 			_engine.addSystem(new MovementSystem());
 			_engine.addSystem(new CollisionSystem());
 			_engine.addSystem(new RenderSystem());			
@@ -46,7 +46,7 @@
 			
 			var _artilleryFactory : ArtilleryFactory = new ArtilleryFactory();
 			
-			var _shell : Entity = _artilleryFactory.buildShell(ArtilleryFactory.ENEMY_BOMB,Math.random() * 600,0);
+			var _shell : Entity = _artilleryFactory.buildShell(ArtilleryFactory.BOMB);
 			addChild(_shell.get(DisplayComponent).view);
 			
 			_engine.addEntity(_shell);
@@ -54,17 +54,6 @@
 			// start het updaten van het spel
 			stage.addEventListener(Event.ENTER_FRAME, updateEngine);
 			
-			stage.addEventListener(MouseEvent.CLICK, shoot);
-		}
-		
-		private function shoot(e:MouseEvent):void 
-		{
-			var _artilleryFactory : ArtilleryFactory = new ArtilleryFactory();
-			
-			var _shell : Entity = _artilleryFactory.buildShell(ArtilleryFactory.MISSILE, 300,stage.stageHeight);
-			addChild(_shell.get(DisplayComponent).view);
-			
-			_engine.addEntity(_shell);
 		}
 
 		private function updateEngine(e : Event) : void
