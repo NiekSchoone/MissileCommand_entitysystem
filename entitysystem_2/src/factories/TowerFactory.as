@@ -22,6 +22,7 @@ package factories
 			var position : PositionComponent 	= new PositionComponent();
 			position.x 							= xLocation;
 			position.y 							= 600;
+			position.rotation = -90;
 			
 			var tower : Entity = new Entity();
 			

@@ -6,7 +6,7 @@ package components {
 		
 		public var velocityX:Number;
 		public var velocityY:Number;
-		public var angularVelocity:Number;
+		public var angularVelocity:Number = 0;
 		
 	}
 }

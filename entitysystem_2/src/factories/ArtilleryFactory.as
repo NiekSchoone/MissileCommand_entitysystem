@@ -20,23 +20,22 @@ package factories
 			var velocity : VelocityComponent = new VelocityComponent();
 			velocity.velocityX 				 = 0;
 			
+			
 			var position : PositionComponent = new PositionComponent();
 			position.x 						 = locX;
 			position.y						 = locY;
+			position.rotation = 90;
+			
 			if (type == MISSILE)
 			{
 				display.view 					= new missile();
 				velocity.velocityY 				 = -1;
-				position.rotation 180;
-				
 			}
 			else if (type == ENEMY_BOMB)
 			{
 				display.view 					= new CarImage();
 				velocity.velocityY 				 = 1;
 			}
-			
-			
 			
 			var shell : Entity = new Entity();
 			

@@ -21,6 +21,7 @@ package systems {
 					target.get(DisplayComponent).view.x			=	target.get(PositionComponent).x;
 					target.get(DisplayComponent).view.y			=	target.get(PositionComponent).y;
 					target.get(DisplayComponent).view.rotation	=	target.get(PositionComponent).rotation;
+					
 				}
 			}
 		}
