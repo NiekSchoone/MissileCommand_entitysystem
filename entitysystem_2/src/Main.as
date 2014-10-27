@@ -5,6 +5,7 @@
 	import components.DisplayComponent;
 	import components.PositionComponent;
 	import components.VelocityComponent;
+	import factories.ArtilleryFactory;
 	import factories.CarFactory;
 	import factories.TowerFactory;
 	import flash.display.DisplayObject;
@@ -42,6 +43,13 @@
 				
 				_engine.addEntity(_tower);
 			}
+			
+			var _artilleryFactory : ArtilleryFactory = new ArtilleryFactory();
+			
+			var _shell : Entity = _artilleryFactory.buildShell(ArtilleryFactory.BOMB);
+			addChild(_shell.get(DisplayComponent).view);
+			
+			_engine.addEntity(_shell);
 			
 			// start het updaten van het spel
 			stage.addEventListener(Event.ENTER_FRAME, updateEngine);
